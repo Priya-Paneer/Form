@@ -34,11 +34,15 @@ function Login() {
     
     if (!values.username) {
       errors.username = "Username is required!";
+    } else if (values.username.length<=5) {
+      errors.username = "Username must be atleast 5 characters";
+    } else if (values.username.length>=10) {
+      errors.username = "Username should not exceed 10 characters";
     }
     if (!values.password) {
       errors.password = "Password is required!";
-    } else if (values.password.length < 4) {
-      errors.password = "Password must be more than 4 characters";
+    } else if (values.password.length < 8) {
+      errors.password = "Password must be more than 8 characters";
     } 
     return errors;
   };
